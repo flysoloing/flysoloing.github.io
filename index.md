@@ -4,18 +4,16 @@ title: 首页
 ---
 <!-- content start -->
 <div class="span8">
-		
 {% for post in site.posts %}
-    <div class="row-fluid">
-      <div class="span12">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-		<p class="text-left">{{ post.date | date: "%d %B %Y" }}</p>
-        <p>{{ post.content | truncatewords }}</p>
-        <p><a href="{{ post.url }}" class="btn">更多 »</a></p>
-      </div>
-	</div>
+  <div class="row-fluid">
+    <div class="span12">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	  <p class="text-left">{{ post.date | date: "%d %B %Y" }}</p>
+      <p>{{ post.content | truncatewords }}</p>
+      <p><a href="{{ post.url }}" class="btn">更多 »</a></p>
+    </div>
+  </div>
 {% endfor %}
-		  
   <!-- paginate start -->
   <div class="pagination pagination-centered">
     <ul>
@@ -29,10 +27,8 @@ title: 首页
     </ul>
   </div>
   <!-- paginate end -->
-		  
 </div>
 <!-- content end -->
-		
 <!-- sidebar start -->
 <div class="span2">
   <div class="well sidebar-nav">
