@@ -5,11 +5,11 @@ title: Home
 <!-- content start -->
 <div class="span8">
 		
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
     <div class="row-fluid">
       <div class="span12">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.content | truncatewords }}</p>
+        <p>{{ post.description }}</p>
         <p><a href="{{ post.url }}" class="btn">更多 »</a></p>
       </div>
 	</div>
