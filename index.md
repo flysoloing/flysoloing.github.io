@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Home
+title: 首页
 ---
 <!-- content start -->
 <div class="span8">
 		
-  {% for post in site.posts %}
+{% for post in site.posts %}
     <div class="row-fluid">
       <div class="span12">
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -14,7 +14,7 @@ title: Home
         <p><a href="{{ post.url }}" class="btn">更多 »</a></p>
       </div>
 	</div>
-  {% endfor %}
+{% endfor %}
 		  
   <!-- paginate start -->
   <div class="pagination pagination-centered">
