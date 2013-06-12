@@ -9,7 +9,7 @@ title: Home
     <div class="row-fluid">
       <div class="span12">
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <p>{{ post.description }}</p>
+        <p>{{ post.content | truncatewords }}</p>
         <p><a href="{{ post.url }}" class="btn">更多 »</a></p>
       </div>
 	</div>
