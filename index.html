@@ -24,17 +24,21 @@ title: 首页
 	  <li><a href="/page{{ paginator.previous_page_path }}">上一页</a></li>
 	  {% endif %}
 	{% else %}
-	  <li>上一页</li>
+	  <li class="disabled"><a href="#">上一页</a></li>
 	{% endif %}
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
+	
+	{% for count in (2..paginator.total_pages) %}
+	  {% if count == paginator.page %}
+      <li class="active"><a href="#">{{ count }}</a></li>
+	  {% else %}
+      <li><a href="/page{{ count }}">{{ count }}</a></li>
+	  {% endif %}
+	{% endfor %}
+	
 	{% if paginator.next_page %}
       <li><a href="/page{{ paginator.next_page }}">下一页</a></li>
 	{% else %}
-	  <li>下一页</li>
+	  <li class="disabled"><a href="#">下一页</a></li>
 	{% endif %}
     </ul>
   </div>
