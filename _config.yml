@@ -1,5 +1,5 @@
 auto: true # automatically update your jekyll
 server: true
 pugments: true
-paginate: 1
+paginate: 2
 permalink: /:title
