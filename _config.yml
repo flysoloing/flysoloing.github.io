@@ -1,5 +1,0 @@
-auto: true # automatically update your jekyll
-server: true
-pugments: true
-paginate: 2
-permalink: /:title
