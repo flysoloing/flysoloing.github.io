@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Zookeeper事件监听的应用 | 陌上谭</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Zookeeper是一个分布式协作框架，它的应用场景很多，比如我们通常会用它来做一些集中式的配置管理，或者使用它作为一个全局性的序列化生成器，这些场景都比较简单。试想有一个场景如下：我们的应用在初始化的时候读取数据库数据并加载到到应用内存中以便程序快速响应。应用部署在多台服务器上，每台服务器部署多个应用实例，如何做到修改数据库的时候，同时通知所有应用实例去连接数据库并重新加载数据到内存呢？解决问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zookeeper事件监听的应用">
+<meta property="og:url" content="http://yoursite.com/2014/11/11/practices-for-zookeeper-listener/">
+<meta property="og:site_name" content="陌上谭">
+<meta property="og:description" content="Zookeeper是一个分布式协作框架，它的应用场景很多，比如我们通常会用它来做一些集中式的配置管理，或者使用它作为一个全局性的序列化生成器，这些场景都比较简单。试想有一个场景如下：我们的应用在初始化的时候读取数据库数据并加载到到应用内存中以便程序快速响应。应用部署在多台服务器上，每台服务器部署多个应用实例，如何做到修改数据库的时候，同时通知所有应用实例去连接数据库并重新加载数据到内存呢？解决问题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zookeeper事件监听的应用">
+<meta name="twitter:description" content="Zookeeper是一个分布式协作框架，它的应用场景很多，比如我们通常会用它来做一些集中式的配置管理，或者使用它作为一个全局性的序列化生成器，这些场景都比较简单。试想有一个场景如下：我们的应用在初始化的时候读取数据库数据并加载到到应用内存中以便程序快速响应。应用部署在多台服务器上，每台服务器部署多个应用实例，如何做到修改数据库的时候，同时通知所有应用实例去连接数据库并重新加载数据到内存呢？解决问题">
+
+  
+    <link rel="alternative" href="/atom.xml" title="陌上谭" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">陌上谭</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">程序猿，在路上</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-practices-for-zookeeper-listener" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/11/practices-for-zookeeper-listener/" class="article-date">
+  <time datetime="2014-11-10T16:56:49.000Z" itemprop="datePublished">Nov 11 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Zookeeper事件监听的应用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Zookeeper是一个分布式协作框架，它的应用场景很多，比如我们通常会用它来做一些集中式的配置管理，或者使用它作为一个全局性的序列化生成器，这些场景都比较简单。试想有一个场景如下：我们的应用在初始化的时候读取数据库数据并加载到到应用内存中以便程序快速响应。应用部署在多台服务器上，每台服务器部署多个应用实例，如何做到修改数据库的时候，同时通知所有应用实例去连接数据库并重新加载数据到内存呢？解决问题的思路有很多，但讲的是Zookeeper相关的，那么我们考虑使用Zookeeper的特性来完成。<br>众所周知，Zookeeper基于选举算法实现。服务端采取主动推送方式，客户端使用长连接。每次推送都有事件，每个事件都有监听机制。<br><a id="more"></a><br>模式简单表述为，触发事件，监听器监听，监听器修改。监听器实现了Zookeeper客户端和spring的两个listener接口，如下所示：  </p>
+<figure class="highlight [Java]"><figcaption><span>[代码清单]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RouterDataListener</span> <span class="keyword">implements</span> <span class="title">ZkDataListener</span>, <span class="title">ApplicationListener</span> </span>{</div><div class="line">    ......</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+<p>以下为相关代码。  </p>
+<h3 id="1、触发事件">1、触发事件</h3>
+<figure class="highlight [Java]"><figcaption><span>[代码清单]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> String <span class="title">updateData</span>() <span class="keyword">throws</span> Exception {</div><div class="line">    String pin=LoginContext.getLoginContext().getPin();</div><div class="line">    <span class="keyword">if</span>(pin!=<span class="keyword">null</span>){</div><div class="line">        pin=pin.toLowerCase();</div><div class="line">    }</div><div class="line">    <span class="keyword">if</span>(!zkWatcherDataService.addWatcherData(routerWatcherData,pin)) {</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception();</div><div class="line">    }</div><div class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+<h3 id="2、处理事件">2、处理事件</h3>
+<figure class="highlight [Java]"><figcaption><span>[代码清单]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">addWatcherData</span>(RouterWatcherData routerWatcherData,String pin) <span class="keyword">throws</span> Exception {</div><div class="line">    <span class="keyword">try</span> {</div><div class="line">        routerWatcherData=readerDataFromZk();</div><div class="line">        <span class="keyword">if</span>(routerWatcherData==<span class="keyword">null</span>) {</div><div class="line">            routerWatcherData=<span class="keyword">new</span> RouterWatcherData();</div><div class="line">        }</div><div class="line">        routerWatcherData.setCount(routerWatcherData.getCount());</div><div class="line">        typeConfigService.saveConfig(configPath,routerWatcherData);</div><div class="line">    } <span class="keyword">catch</span> (Exception e) {</div><div class="line">        logger.error(<span class="string">""</span>,e);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    }</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+<h3 id="3、注册监听器">3、注册监听器</h3>
+<figure class="highlight [Java]"><figcaption><span>[代码清单]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onApplicationEvent</span>(ApplicationEvent <span class="keyword">event</span>) {</div><div class="line">    String zkRouterPath=configPath+<span class="string">"/"</span>+environment;</div><div class="line">    <span class="keyword">try</span> {</div><div class="line">        jdZookeeperClient.subscribeDataChanges(zkRouterPath,<span class="keyword">this</span>);</div><div class="line">    } <span class="keyword">catch</span> (Exception e) {</div><div class="line">        logger.error(<span class="string">""</span>,e);</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+<h3 id="4、处理监听事件">4、处理监听事件</h3>
+<figure class="highlight [Java]"><figcaption><span>[代码清单]</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleDataChange</span>(String path, Object data) {</div><div class="line">    businessBaseService.initialize();</div><div class="line">    logger.info(<span class="string">"数据初始化成功"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>总结：<br>Zookeeper的选举实现能使它应用于多种场景，比如序列号生成器，统一协作管理等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/11/practices-for-zookeeper-listener/" data-id="pd73p5pu6rarjlcg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/11/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <!--h3 class="widget-title">Archives</h3 -->
+	<h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <!-- h3 class="widget-title">Recents</h3 -->
+	<h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/11/11/practices-for-zookeeper-listener/">Zookeeper事件监听的应用</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 flysoloing<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
