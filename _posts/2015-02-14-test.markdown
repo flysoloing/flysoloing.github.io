@@ -1,0 +1,13 @@
+---
+published: true
+title: test
+layout: post
+---
+this is my test page on tiny press  
+
+
+##dasd
+
+#adasd
+
+`asdasdads`
