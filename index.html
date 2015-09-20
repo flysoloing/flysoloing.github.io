@@ -41,12 +41,12 @@
 
 <meta name="description" content="思考 生活 工作">
 <meta property="og:type" content="website">
-<meta property="og:title" content="陌上@JD">
+<meta property="og:title" content="陌上">
 <meta property="og:url" content="http://flysoloing.github.io/index.html">
-<meta property="og:site_name" content="陌上@JD">
+<meta property="og:site_name" content="陌上">
 <meta property="og:description" content="思考 生活 工作">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陌上@JD">
+<meta name="twitter:title" content="陌上">
 <meta name="twitter:description" content="思考 生活 工作">
 
 
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title> 陌上@JD </title>
+  <title> 陌上 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -97,7 +97,7 @@
       <span class="logo">
         <i class="icon-next-logo"></i>
       </span>
-      <span class="site-title">陌上@JD</span>
+      <span class="site-title">陌上</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -180,6 +180,91 @@
       <div class="main-inner">
         <div id="content" class="content"> 
   <section id="posts" class="posts-expand">
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/20/spring-database-sharding-practice/" itemprop="url">
+                「flyingcode系列」基于Spring的分库分表扩展实践
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-20T13:13:10+08:00" content="2015-09-20">
+            2015-09-20
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/开发-实践/" itemprop="url" rel="index">
+                  <span itemprop="name">开发 & 实践</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            如何实现多数据源的管理Spring在2.0.1版本后添加了一个路由数据源抽象类，AbstractRoutingDataSource，这个类是我们实现多数据源管理的基础。查看源码，从类注释信息可以得知其工作原理：这个抽象类的实现在调用getConnection()方法时，是基于lookup key去找到对应的目标数据源，而这个lookup key通常是从线程绑定的事务上下文里找到的。知道工作原理后，我们先实现一个自己的数据源，命名为ShardsRoutingDataSource，见代码清单1。12
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/20/spring-database-sharding-practice/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -302,7 +387,7 @@ M
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -316,7 +401,7 @@ M
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
