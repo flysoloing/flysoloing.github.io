@@ -41,13 +41,13 @@
 
 <meta name="description" content="如何实现多数据源的管理Spring在2.0.1版本后添加了一个路由数据源抽象类，AbstractRoutingDataSource，这个类是我们实现多数据源管理的基础。查看源码，从类注释信息可以得知其工作原理：这个抽象类的实现在调用getConnection()方法时，是基于lookup key去找到对应的目标数据源，而这个lookup key通常是从线程绑定的事务上下文里找到的。知道工作原理后，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「flyingcode系列」基于Spring的分库分表扩展实践">
+<meta property="og:title" content="基于Spring的分库分表扩展实践">
 <meta property="og:url" content="http://flysoloing.github.io/2015/09/20/spring-database-sharding-practice/index.html">
 <meta property="og:site_name" content="陌上">
 <meta property="og:description" content="如何实现多数据源的管理Spring在2.0.1版本后添加了一个路由数据源抽象类，AbstractRoutingDataSource，这个类是我们实现多数据源管理的基础。查看源码，从类注释信息可以得知其工作原理：这个抽象类的实现在调用getConnection()方法时，是基于lookup key去找到对应的目标数据源，而这个lookup key通常是从线程绑定的事务上下文里找到的。知道工作原理后，">
-<meta property="og:updated_time" content="2015-09-20T05:39:42.420Z">
+<meta property="og:updated_time" content="2015-09-27T07:46:36.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「flyingcode系列」基于Spring的分库分表扩展实践">
+<meta name="twitter:title" content="基于Spring的分库分表扩展实践">
 <meta name="twitter:description" content="如何实现多数据源的管理Spring在2.0.1版本后添加了一个路由数据源抽象类，AbstractRoutingDataSource，这个类是我们实现多数据源管理的基础。查看源码，从类注释信息可以得知其工作原理：这个抽象类的实现在调用getConnection()方法时，是基于lookup key去找到对应的目标数据源，而这个lookup key通常是从线程绑定的事务上下文里找到的。知道工作原理后，">
 
 
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> 「flyingcode系列」基于Spring的分库分表扩展实践 | 陌上 </title>
+  <title> 基于Spring的分库分表扩展实践 | 陌上 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -191,7 +191,7 @@
           
           
             
-              「flyingcode系列」基于Spring的分库分表扩展实践
+              基于Spring的分库分表扩展实践
             
           
         </h1>
@@ -212,6 +212,18 @@
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                 <a href="/categories/开发-实践/" itemprop="url" rel="index">
                   <span itemprop="name">开发 & 实践</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/开发-实践/flyingcode系列/" itemprop="url" rel="index">
+                  <span itemprop="name">flyingcode系列</span>
                 </a>
               </span>
 
@@ -277,6 +289,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/27/digitalocean-vps-practices-01/" rel="prev">DigitalOcean VPS实践之基础篇</a>
             
           </div>
 
@@ -371,21 +385,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -490,7 +504,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'flysoloinggithubblog';
       var disqus_identifier = '2015/09/20/spring-database-sharding-practice/';
-      var disqus_title = '「flyingcode系列」基于Spring的分库分表扩展实践';
+      var disqus_title = '基于Spring的分库分表扩展实践';
       var disqus_url = 'http://flysoloing.github.io/2015/09/20/spring-database-sharding-practice/';
 
       function run_disqus_script(disqus_script){
