@@ -1,0 +1,44 @@
+<?xml-stylesheet type="text/xsl" href="https://flysoloing.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://flysoloing.github.io/readme/</loc>
+    <lastmod>2020-07-30T17:17:17+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://flysoloing.github.io/readme_template/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://flysoloing.github.io/readme_template_cn/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://flysoloing.github.io/suggestions_for_a_good_readme/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://flysoloing.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://flysoloing.github.io/tags/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://flysoloing.github.io/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>

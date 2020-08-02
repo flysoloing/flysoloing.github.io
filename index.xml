@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二把刀</title>
+    <link>https://flysoloing.github.io/</link>
+    <description>Recent content on 二把刀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="https://flysoloing.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>articles</title>
+      <link>https://flysoloing.github.io/readme/</link>
+      <pubDate>Thu, 30 Jul 2020 17:17:17 +0000</pubDate>
+      
+      <guid>https://flysoloing.github.io/readme/</guid>
+      <description>articles 1、test</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://flysoloing.github.io/readme_template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://flysoloing.github.io/readme_template/</guid>
+      <description>Project Name 
+ Description：Foobar is a Python library for dealing with word pluralization.
+ Your README file is normally the first entry point to your code. It should tell people why they should use your module, how they can install it, and how they can use it. Standardizing how you write your README makes creating and maintaining your READMEs easier. Great documentation takes work!
+Features/Background Your README file is normally the first entry point to your code.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://flysoloing.github.io/readme_template_cn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://flysoloing.github.io/readme_template_cn/</guid>
+      <description>项目名称 
+ 项目描述：Foobar is a Python library for dealing with word pluralization.
+ Your README file is normally the first entry point to your code. It should tell people why they should use your module, how they can install it, and how they can use it. Standardizing how you write your README makes creating and maintaining your READMEs easier. Great documentation takes work!
+特性/背景 Your README file is normally the first entry point to your code.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://flysoloing.github.io/suggestions_for_a_good_readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://flysoloing.github.io/suggestions_for_a_good_readme/</guid>
+      <description>Suggestions for a good README Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.</description>
+    </item>
+    
+  </channel>
+</rss>
