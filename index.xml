@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二把刀</title>
+    <link>https://flysoloing.github.io/</link>
+    <description>Recent content on 二把刀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="https://flysoloing.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>articles</title>
+      <link>https://flysoloing.github.io/readme/</link>
+      <pubDate>Thu, 30 Jul 2020 17:17:17 +0000</pubDate>
+      
+      <guid>https://flysoloing.github.io/readme/</guid>
+      <description>articles 1、test</description>
+    </item>
+    
+  </channel>
+</rss>
