@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文章仓库 on 二把刀</title>
+    <link>https://flysoloing.github.io/tags/%E6%96%87%E7%AB%A0%E4%BB%93%E5%BA%93/</link>
+    <description>Recent content in 文章仓库 on 二把刀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Apr 2021 17:07:34 +0000</lastBuildDate><atom:link href="https://flysoloing.github.io/tags/%E6%96%87%E7%AB%A0%E4%BB%93%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>文章仓库说明</title>
+      <link>https://flysoloing.github.io/posts/%E6%96%87%E7%AB%A0%E4%BB%93%E5%BA%93%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
+      
+      <guid>https://flysoloing.github.io/posts/%E6%96%87%E7%AB%A0%E4%BB%93%E5%BA%93%E8%AF%B4%E6%98%8E/</guid>
+      <description>articles是我的个人文章仓库，是个人博客flysoloing.github.io的内容来源，博客网站托管在GitHub 这是一篇说明性的</description>
+    </item>
+    
+  </channel>
+</rss>
