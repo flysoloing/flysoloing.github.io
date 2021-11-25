@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>首页 on CRUD MAN</title>
+    <link>https://www.crudman.cn/</link>
+    <description>Recent content in 首页 on CRUD MAN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 26 Apr 2021 18:51:40 +0800</lastBuildDate><atom:link href="https://www.crudman.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>文章仓库说明</title>
+      <link>https://www.crudman.cn/posts/how-to-create-your-owner-article-repository/</link>
+      <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
+      
+      <guid>https://www.crudman.cn/posts/how-to-create-your-owner-article-repository/</guid>
+      <description>articles是我的个人文章仓库，是个人博客flysoloing.github.io的内容来源，博客网站托管在GitHub 这是一篇说明性的文章，在正文之前的YAML格式的Front Matter也是一个示例，后续其他文章增加Front Matter的时候，可以直接拷贝过去，略作删减即可使用</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://www.crudman.cn/about/</link>
+      <pubDate>Mon, 26 Apr 2021 18:51:40 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/about/</guid>
+      <description>从毕业到现在，已经过去了一轮多，职业生涯里的大多数时间是在京东度过的，真是青春都喂了京东狗 工作中从程序员开始干起，做过架构师，也做过技术管理者 生活中喜欢篮球、游泳等体育运动，喜欢阅读和游戏 写作对于我的意义总结来说有下面几点： 思考 沉淀 迭代认知 如有可能，帮助他人少走弯路，赠人玫瑰，手留余香</description>
+    </item>
+    
+  </channel>
+</rss>
