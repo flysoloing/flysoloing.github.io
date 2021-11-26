@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="has-navbar-fixed-top"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CRUD MAN-文章仓库说明</title>
+    
+    <link rel="stylesheet" href="https://www.crudman.cn/css/qiuqiu.css">
+
+    <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
+
+    <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+</head><body>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                
+
+                <img src="https://www.crudman.cn/image/logo.png" width="112" height="28">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="myNavbar" class="navbar-menu">
+            
+            
+            
+            
+            <div class="navbar-end">
+                <a class="navbar-item" href="/">首页</a>
+                <a class="navbar-item" href="/posts">归档</a>
+                <a class="navbar-item" href="/tags">标签</a>
+                <a class="navbar-item" href="/categories">分类</a>
+                <a class="navbar-item" href="/about">关于</a>
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav><section class="section">
+            <div class="container">
+    <article class="block">
+    <div class="content">
+        
+        <h1 class="title">文章仓库说明</h1>
+
+
+
+        <div class="block">
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                </span>
+                <span>2021-04-21</span>
+            </span>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                </span>
+                <span>655字</span>
+            </span>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="far fa-clock" aria-hidden="true"></i>
+                </span>
+                <span>2分钟</span>
+            </span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+        <p>articles是我的个人文章仓库，是个人博客flysoloing.github.io的内容来源，博客网站托管在GitHub</p>
+<p>这是一篇说明性的文章，在正文之前的YAML格式的Front Matter也是一个示例，后续其他文章增加Front Matter的时候，可以直接拷贝过去，略作删减即可使用</p>
+<h3 id="仓库目录结构">仓库目录结构</h3>
+<p>因为是博客，内容主要是日常个人的文字，整个内容和目录结构如下</p>
+<ul>
+<li>articles-repo
+<ul>
+<li>_index.md，描述博客首页的相关内容，通常的URL为：blog.io/</li>
+<li>about
+<ul>
+<li>index.md，描述博客介绍页的相关内容，通常的URL为：blog.io/about/</li>
+</ul>
+</li>
+<li>posts
+<ul>
+<li>_index.md，描述posts所有内容的列表页，通常的URL为：blog.io/posts/</li>
+<li>a-post.md，描述post内容的单页面，通常的URL为：blog.io/posts/a-post</li>
+<li>b-post.md，同上，以此类推</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="聚合页面说明">聚合页面说明</h3>
+<p>上述结构为文章仓库的目录结构，在实际的内容编译过程中，还有一些聚合信息页面生成，最常见的是categories和tags</p>
+<p>在Hugo里面，一般用taxonomy和term来表示，格式是/taxonomy/term/</p>
+<p>例如：</p>
+<p>在posts目录下，一共有3篇文章，每篇文章都有3个不同的tag</p>
+<ol>
+<li>first-post.md，tags: [&ldquo;a&rdquo;, &ldquo;b&rdquo;, &ldquo;c&rdquo;]</li>
+<li>second-post.md,，tags: [&ldquo;o&rdquo;, &ldquo;p&rdquo;, &ldquo;q&rdquo;]</li>
+<li>third-post.md，tags: [&ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;z&rdquo;]</li>
+</ol>
+<p>对应的tag聚合页面URL为：blog.io/tags/</p>
+<p>对应某一个tag的页面URL为：blog.io/tags/a/</p>
+
+    </div>
+    <hr>
+</article>
+
+<nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+    
+    
+</nav>
+
+
+            </div>
+        </section>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon"><i class="far fa-copyright"></i></span>2021 <a href="/">CRUD MAN</a> | <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY NC SA 4.0</a>
+        </p>
+        <p>
+            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme is <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>, based on <a href="https://bulma.io/">Bulma</a>
+        </p>
+    </div>
+</footer><script>
+    $(document).ready(function() {
+        
+        $(".navbar-burger").click(function() {
+            
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+        });
+    });
+</script></body>
+</html>
