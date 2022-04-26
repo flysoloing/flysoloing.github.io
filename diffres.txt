@@ -1,3 +1,0 @@
-Only in /github/home/workspace/flysoloing.github.io: .CNAME
-Only in /github/home/workspace/flysoloing.github.io: .gitignore
-Only in /github/home/workspace/flysoloing.github.io: diffres.txt
