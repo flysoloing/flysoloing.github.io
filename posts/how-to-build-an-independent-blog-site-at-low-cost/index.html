@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="has-navbar-fixed-top"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CRUDMAN | 低成本建设独立博客网站</title>
+    <meta name="author" content="flysoloing">
+    <meta name="keywords" content="CRUDMAN,CRUD MAN,撸码侠,软件开发,架构设计,职业发展,读书笔记,生活随笔">
+    <meta name="description" content="低成本建设独立博客网站">
+    
+    <link rel="stylesheet" href="https://www.crudman.cn/css/qiuqiu.css">
+
+    <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
+
+    <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+</head><body>
+        <div id="wrapper">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                
+
+                <img src="https://www.crudman.cn/image/logo.png" width="112" height="28">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="myNavbar" class="navbar-menu">
+            
+            
+            
+            
+            <div class="navbar-end">
+                <a class="navbar-item" href="/">首页</a>
+                <a class="navbar-item" href="/posts">归档</a>
+                <a class="navbar-item" href="/categories">分类</a>
+                <a class="navbar-item" href="/tags">标签</a>
+                <a class="navbar-item" href="/about">关于</a>
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav><section class="section">
+            <div class="container">
+    <article class="block">
+    <div class="content">
+        
+        <h1 class="title">低成本建设独立博客网站</h1>
+
+
+
+        <div class="block">
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                </span>
+                <span>2021-04-28</span>
+            </span>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                </span>
+                <span>约1898字</span>
+            </span>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="far fa-clock" aria-hidden="true"></i>
+                </span>
+                <span>预计阅读4分钟</span>
+            </span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+        <p>在互联网高速发展的今天，搭建一个属于自己的独立博客是一件非常简单的事情。对于不具备IT知识的朋友来说，可以选择阿里云或腾讯云等云厂商，它们都提供了从域名注册、自助建站到网站备案的一站式服务，对新手特别友好。如果预算有限，也有其他零成本或低成本的方案可供选择，比如著名的全球同性交友网站<a href="https://github.com/">GitHub</a>以及国内的<a href="https://gitee.com/">Gitee</a>，二者均提供Pages服务用于托管静态网页。</p>
+<p>下面将从博客搭建和日常写作两个部分进行描述，介绍如何低成本建设独立博客网站。博客搭建好只是第一步，后面持续的更新才是让博客具有生命力的重要保证。</p>
+<h3 id="博客搭建">博客搭建</h3>
+<p>在评估了搭建过程的可玩性和后续维护的便利性，我选择GitHub作为个人独立博客的托管平台，<a href="https://gohugo.io/">Hugo</a>作为静态网站生成器。整个博客搭建过程分为四部分，包括：设置网站托管平台，设置静态网站生成器，发布网站和自动化发布。</p>
+<h5 id="设置网站设置托管平台">设置网站设置托管平台</h5>
+<p>用于存放静态网站文件，包含下面两个步骤：</p>
+<ol>
+<li>注册GitHub账户，或使用已有GitHub账户登录</li>
+<li>创建一个名为username.github.io的网站代码仓库，其中<strong>username</strong>为你的GitHub账户名称</li>
+</ol>
+<h5 id="设置静态网站生成器">设置静态网站生成器</h5>
+<p>静态网站生成器的选择比较多，目前主流的是Hugo和Hexo。综合生成性能、社区活跃度和网站主题丰富程度等各方面因素，最终确认使用Hugo，包含下面几个步骤：</p>
+<ol>
+<li>下载安装Hugo，创建本地站点后，去<a href="https://themes.gohugo.io/">Hugo Themes</a>选择一个喜欢的主题，然后安装主题到本地站点</li>
+<li>添加站点内容，例如博客文章等，一般是以Markdown格式文件存储</li>
+<li>启动Hugo本地Server，访问http://localhost:1313/进行预览</li>
+<li>发布本地站点内容，会生成一个完整的静态网站文件夹</li>
+</ol>
+<h5 id="发布网站">发布网站</h5>
+<p>完成上述步骤后，通过Git命令或Git可视化工具，把生成的静态网站内容提交到网站代码仓库，再稍等一会儿，就可以通过访问https://username.github.io来浏览网站。</p>
+<h5 id="自动化发布">自动化发布</h5>
+<p>从上面博客搭建过程过来看，影响内容发布效率的地方主要有两个：一是生成静态网站内容，二是发布网站。考虑到GitHub提供了<a href="https://docs.github.com/en/actions">GitHub Actions</a>功能，完全可以通过它来实现内容发布自动化。结合安全和效率等因素，我设想的自动化发布流程如下所示：</p>
+<p><img src="https://crudman-1255217231.cos.ap-beijing.myqcloud.com/article-publish-automation.png" alt="article-publish-automation"></p>
+<p>为了实现这个自动化发布流程，还需要两个工具，一个是博客文章仓库，另一个是生成静态网站的Hugo Action。博客文章仓库推荐创建为私有仓库，博客内容只对自己可见。至于Hugo Action，在GitHub的Marketplace里面，可以搜到不少符合相关功能的Actions供选择使用。为了掌握GitHub Action的使用，我自己实现了一个Hugo Action，而且更符合我的实际使用场景，感兴趣的朋友可以点击<a href="https://github.com/flysoloing/hugo-action">这里</a>进行了解。</p>
+<p>另外，由于Hugo的主题市场内容实在庞杂，挑选起来眼花缭乱，而我比较倾向极简主义，又想要有更多的可控性和可玩性。思来想去，最后决定自己造一个定制化的极简主题轮子，CSS样式框架方面，选择<a href="https://bulma.io/">Bulma</a>并做了一些定制化修改，例如移动端的菜单适配优化。作为一个资深原神萌新玩家，我把该主题命名为<a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>，也就是丘丘人的意思。</p>
+<h3 id="日常写作">日常写作</h3>
+<p>写到这里，基本上网站基础搭建和后续维护流程都OK了，剩下的就是日常写作方面的事情，包括写作工具，图床工具，免费商业图片库等。</p>
+<h5 id="写作工具">写作工具</h5>
+<p>作为Markdown忠实爱好者，我首选的写作工具是<a href="https://typora.io/">Typora</a>，它功能强大，对Markdown语法的支持非常全面，而且提供多种编辑模式，如打字机模式和专注模式，给人丝滑流畅的写作体验。从beta测试时期就开始在使用，一直到现在进入收费阶段，也算是见证了一款优秀产品的成长。</p>
+<h5 id="图床工具">图床工具</h5>
+<p>博客文章少不了图片，所以如何选择图床工具也是必须要考虑的问题，这里强烈推荐<a href="https://picgo.github.io/PicGo-Doc/">PicGo</a>，和Typora搭配使用简直就是天作之合。PicGo默认支持SM.MS、<a href="https://cloud.tencent.com/product/cos">腾讯云COS</a>、GitHub和七牛等7家图床，有较大的选择范围。在评估了是否备案、大小限制和访问性能等综合因素，我最后选择使用腾讯云COS，相关配置方式可以去PicGo官方文档查阅。</p>
+<h5 id="免费商业图片库">免费商业图片库</h5>
+<p>写完文章后，给文章配上合适的图片是最后一步，如果不想收到律师函或者法院传票的话，就不要随便去网上找一些版权不明的图片用到文章里面了。这里推荐两个比较出名的免费商业图片库：</p>
+<ol>
+<li><a href="https://www.pexels.com/">Pexels</a>，Pexels上的所有图片都可以免费使用，虽然大多数图片是在 Pexels 许可下发布的，但有些图片受知识共享零版权 (CC0) 许可证保护，建议优先选择标有“CC0”的图片</li>
+<li><a href="https://unsplash.com/">Unsplash</a>，Unsplash上的所有图片都可以免费下载和使用，无论是商业还是非商业目的</li>
+</ol>
+
+    </div>
+    
+    <div>
+        <span class="icon-text">
+            <span class="icon">
+                <i class="fas fa-folder-open"></i>
+            </span>
+
+            
+            <span><a href="/categories/%e5%bb%ba%e7%ab%99">建站</a></span>
+            <span>&nbsp;</span>
+            
+        </span>
+    </div>
+    
+    
+    <div>
+        <span class="icon-text ">
+            <span class="icon">
+                <i class="fas fa-tags"></i>
+            </span>
+
+            
+            <span><a href="/tags/%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2">[个人博客]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/%e7%8b%ac%e7%ab%8b%e5%8d%9a%e5%ae%a2">[独立博客]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/%e6%8a%80%e6%9c%af%e5%8d%9a%e5%ae%a2">[技术博客]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/github">[GitHub]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/hugo">[Hugo]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/bulma">[Bulma]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/typora">[Typora]</a></span>
+            <span>&nbsp;</span>
+            
+        </span>
+    </div>
+    
+    <hr>
+</article>
+
+<nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+    
+    <a class="pagination-previous" disabled>上一篇：没有了</a>
+    
+    
+    
+    
+    <a class="pagination-next" href="https://www.crudman.cn/posts/article-repository/">下一篇：文章仓库说明</a>
+    
+    
+</nav>
+
+
+            </div>
+        </section>
+        </div>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon"><i class="far fa-copyright"></i></span>2022 <a href="/">CRUDMAN</a> |  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY NC SA 4.0</a>
+        </p>
+        <p>
+            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme is <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>, based on <a href="https://bulma.io/">Bulma</a>
+        </p>
+    </div>
+</footer><script>
+    $(document).ready(function() {
+        
+        $(".navbar-burger").click(function() {
+            
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+        });
+    });
+</script></body>
+</html>
