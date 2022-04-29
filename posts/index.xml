@@ -16,14 +16,5 @@
       <description>在互联网高速发展的今天，搭建一个属于自己的独立博客是一件非常简单的事情。对于不具备IT知识的朋友来说，可以选择阿里云或腾讯云等云厂商，它们都提供了从域名注册、自助建站到网站备案的一站式服务，对新手特别友好。如果预算有限，也有其他零成本或低成本的方案可供选择，比如著名的全球同性交友网站Gi</description>
     </item>
     
-    <item>
-      <title>文章仓库说明</title>
-      <link>https://www.crudman.cn/posts/article-repository/</link>
-      <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
-      
-      <guid>https://www.crudman.cn/posts/article-repository/</guid>
-      <description>articles是我的个人文章仓库，是个人博客flysoloing.github.io的内容来源，博客网站托管在GitHub 这是一篇说明性的文章，在正文之前的YAML格式的Front Matter也是一个示例，后续其他文章增加Front Matter的时候，可以直接拷贝过去，略作删减即可使用</description>
-    </item>
-    
   </channel>
 </rss>
