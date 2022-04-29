@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>首页 on CRUDMAN</title>
-    <link>https://www.crudman.cn/</link>
-    <description>Recent content in 首页 on CRUDMAN</description>
+    <title>独立博客 on CRUDMAN</title>
+    <link>https://www.crudman.cn/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 独立博客 on CRUDMAN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Apr 2021 18:51:40 +0800</lastBuildDate><atom:link href="https://www.crudman.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 17:07:34 +0000</lastBuildDate><atom:link href="https://www.crudman.cn/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>低成本建设独立博客网站</title>
       <link>https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/</guid>
       <description>在互联网高速发展的今天，搭建一个属于自己的独立博客是一件非常简单的事情。对于不具备IT知识的朋友来说，可以选择阿里云或腾讯云等云厂商，它们都提供了从域名注册、自助建站到网站备案的一站式服务，对新手特别友好。如果预算有限，也有其他零成本或低成本的方案可供选择，比如著名的全球同性交友网站Gi</description>
-    </item>
-    
-    <item>
-      <title>关于</title>
-      <link>https://www.crudman.cn/about/</link>
-      <pubDate>Mon, 26 Apr 2021 18:51:40 +0800</pubDate>
-      
-      <guid>https://www.crudman.cn/about/</guid>
-      <description>关于写作 先说下写作的意义，对我来说主要有三个方面。首先是促进思考和表达。在写作的时候，不能只考虑只言片语，还需要统筹规划，反复构思和琢磨，这样才能用优美的文字将有价值的内容具化出来；其次是迭代认知。经过大量的思考后，我们会形成自己的思维模型，随着思维能力的不断提升，认知也随之迭代提升；最</description>
     </item>
     
   </channel>
