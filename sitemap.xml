@@ -2,25 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.crudman.cn/categories/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/posts/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/tags/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/tags/%E4%BA%AC%E4%B8%9C/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/posts/my-ten-years-of-the-jd/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/tags/%E5%8D%81%E5%91%A8%E5%B9%B4/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/tags/%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/categories/%E8%81%8C%E5%9C%BA/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/tags/%E8%81%8C%E5%9C%BA%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2022-05-21T11:03:33+08:00</lastmod>
+  </url><url>
     <loc>https://www.crudman.cn/resume/</loc>
     <lastmod>2022-04-27T16:14:40+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/bulma/</loc>
     <lastmod>2021-04-28T17:07:34+00:00</lastmod>
   </url><url>
-    <loc>https://www.crudman.cn/categories/</loc>
-    <lastmod>2021-04-28T17:07:34+00:00</lastmod>
-  </url><url>
     <loc>https://www.crudman.cn/tags/github/</loc>
     <lastmod>2021-04-28T17:07:34+00:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/hugo/</loc>
-    <lastmod>2021-04-28T17:07:34+00:00</lastmod>
-  </url><url>
-    <loc>https://www.crudman.cn/posts/</loc>
-    <lastmod>2021-04-28T17:07:34+00:00</lastmod>
-  </url><url>
-    <loc>https://www.crudman.cn/tags/</loc>
     <lastmod>2021-04-28T17:07:34+00:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/typora/</loc>
