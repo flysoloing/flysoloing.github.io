@@ -44,6 +44,60 @@
     </item>
     
     <item>
+      <title>CDN</title>
+      <link>https://www.crudman.cn/tags/cdn/</link>
+      <pubDate>Sat, 29 May 2021 17:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/tags/cdn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>个人博客</title>
+      <link>https://www.crudman.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 29 May 2021 17:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术博客</title>
+      <link>https://www.crudman.cn/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 29 May 2021 17:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>独立博客</title>
+      <link>https://www.crudman.cn/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 29 May 2021 17:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网络加速</title>
+      <link>https://www.crudman.cn/tags/%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Sat, 29 May 2021 17:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/tags/%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网页加载速度优化</title>
+      <link>https://www.crudman.cn/tags/%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 29 May 2021 17:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/tags/%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Bulma</title>
       <link>https://www.crudman.cn/tags/bulma/</link>
       <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
@@ -76,33 +130,6 @@
       <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
       
       <guid>https://www.crudman.cn/tags/typora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>个人博客</title>
-      <link>https://www.crudman.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
-      
-      <guid>https://www.crudman.cn/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>技术博客</title>
-      <link>https://www.crudman.cn/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
-      
-      <guid>https://www.crudman.cn/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>独立博客</title>
-      <link>https://www.crudman.cn/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Wed, 28 Apr 2021 17:07:34 +0000</pubDate>
-      
-      <guid>https://www.crudman.cn/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
     </item>
     

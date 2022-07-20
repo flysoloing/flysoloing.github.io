@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
 
     <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
     
     
     
@@ -27,7 +27,7 @@
             <a class="navbar-item" href="/">
                 
 
-                <img src="https://www.crudman.cn/image/logo.png" width="112" height="28">
+                <img src="https://www.crudman.cn/image/logo.png" alt width="112" height="28">
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
                 <span aria-hidden="true"></span>
@@ -208,7 +208,7 @@
     
     
     
-    <a class="pagination-next" href="https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/">下一篇：低成本建设独立博客网站</a>
+    <a class="pagination-next" href="https://www.crudman.cn/posts/speeding-up-the-access-of-the-blog-site/">下一篇：提高博客网站的访问速度</a>
     
     
 </nav>
@@ -226,14 +226,37 @@
             Powered by <a href="https://gohugo.io/">Hugo</a> | Theme is <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>, based on <a href="https://bulma.io/">Bulma</a>
         </p>
     </div>
-</footer><script>
-    $(document).ready(function() {
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
         
-        $(".navbar-burger").click(function() {
-            
-            $(".navbar-burger").toggleClass("is-active");
-            $(".navbar-menu").toggleClass("is-active");
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
         });
+
     });
 </script></body>
 </html>

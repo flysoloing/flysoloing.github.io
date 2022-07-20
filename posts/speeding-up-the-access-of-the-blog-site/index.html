@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="has-navbar-fixed-top"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CRUDMAN | 提高博客网站的访问速度</title>
+    <meta name="author" content="flysoloing">
+    <meta name="keywords" content="CRUDMAN,CRUD MAN,撸码侠,软件开发,架构设计,职业发展,读书笔记,生活随笔">
+    <meta name="description" content="提高博客网站的访问速度">
+    
+
+    <link rel="stylesheet" href="https://www.crudman.cn/css/qiuqiu.min.css">
+
+    <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
+
+    <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
+
+    
+    
+    
+</head><body>
+        <div id="wrapper">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                
+
+                <img src="https://www.crudman.cn/image/logo.png" alt width="112" height="28">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="myNavbar" class="navbar-menu">
+            
+            
+            
+            
+            <div class="navbar-end">
+                <a class="navbar-item" href="/">首页</a>
+                <a class="navbar-item" href="/posts">归档</a>
+                <a class="navbar-item" href="/categories">分类</a>
+                <a class="navbar-item" href="/tags">标签</a>
+                <a class="navbar-item" href="/about">关于</a>
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav><section class="section">
+            <div class="container">
+    <article class="block">
+    <div class="content">
+        
+        <h1 class="title">提高博客网站的访问速度</h1>
+
+
+
+        <div class="block">
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                </span>
+                <span>2021-05-29</span>
+            </span>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                </span>
+                <span>约2558字</span>
+            </span>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="far fa-clock" aria-hidden="true"></i>
+                </span>
+                <span>预计阅读6分钟</span>
+            </span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+        <p>由于我的博客网站托管在GitHub上，而国内访问GitHub又是出了名的慢，经常好几秒过去页面也加载不出来。所以如何提升博客网站的访问速度，提升用户的访问体验，也是需要尽快去解决的事情。</p>
+<p>一般来说，提高网站的访问速度，主要从两个方面去做优化：</p>
+<ol>
+<li>网页加载速度优化</li>
+<li>网络加速</li>
+</ol>
+<h3 id="网页加载速度优化">网页加载速度优化</h3>
+<p>提高网页的加载速度，主要从以下几个方面来考虑：</p>
+<ol>
+<li>图片优化</li>
+<li>CSS和JS等静态资源优化</li>
+<li>第三方库的引用优化</li>
+</ol>
+<h5 id="图片优化">图片优化</h5>
+<p>图片大小优化。现在手机/相机像素都很高，拍出的图片基本上动辄好几MB，而且对移动设备来说，下载这些图片特别耗费流量。所以配图的时候，尽量把原图剪裁小一点。我个人习惯按长宽比4:3或者16:9去进行剪裁，换算成像素的话，也可以选择960*720/640*480，或者960*540/640*360。</p>
+<p>图片格式优化。如果对图片清晰度没有要求的话，可以选择JPG或JPEG格式，否则还是用PNG这种无损图片格式。如果即想要保留图片的清晰度，又想要较小的图片文件大小，使用图片压缩工具就可以达到所需的效果，比如Google推出的<a href="https://squoosh.app/">Squoosh</a>，还有<a href="https://tinypng.com/">TinyPNG</a>等。</p>
+<p>图片延迟加载。当划到图片的时候才加载，可以提高整个页面的打开速度。常见的图片延迟加载有两种方式，一种是在<code>&lt;img&gt;</code>标签里增加<code>loading=&quot;lazy&quot;</code>属性；另一种是引入第三方的JS类库，如<a href="https://github.com/aFarkas/lazysizes">lazysizes</a>和<a href="https://github.com/ApoorvSaxena/lozad.js">Lozad.js</a>，二者都是基于IntersectionObserver API实现。不过由于我使用Typora作为写作工具，要支持图片延迟加载，还需要在博客模板里面做很多动态变更图片<code>src</code>属性的工作，所以还是算了。</p>
+<p>图片编辑工具，专业人士可以使用Photoshop等专业软件编辑，我一般直接用的操作系统自带的画图工具进行编辑，基本上也够用。</p>
+<h5 id="css和js等静态资源优化">CSS和JS等静态资源优化</h5>
+<p>CSS压缩。CRUDMAN使用的CSS是基于Bulma定制化剪裁的，而且在SASS编译的时候，也是按最小化压缩方式编译，CSS文件整体大小比未优化前小一半以上。</p>
+<p>JS压缩。JS的压缩基本上就是常见的几个工具，像<a href="https://github.com/mishoo/UglifyJS">UglifyJS</a>，<a href="https://jscompress.com/">JSCompress</a>等，实际上JSCompress也是基于UglifyJS和babel-minify来实现的。</p>
+<h5 id="第三方库的引用优化">第三方库的引用优化</h5>
+<p>在CRUDMAN中用到了几个第三方库，像<a href="https://fontawesome.com/">FontAwesome</a>，<a href="https://jquery.com/">jQuery</a>和<a href="https://www.mathjax.org/">MathJax</a>。第三方库的引用优化主要有3种方式：</p>
+<ol>
+<li>按需加载。以MathJax为例，在文章的Front Matter中增加专门字段进行判断，如果文章内包含数学公式等，则该字段置为true，页面加载时会引用该类库</li>
+<li>尽量使用原生JavaScript。由于博客中并没有特别多的动态功能，可以将jQuery写法改为原生JavaScript的写法，虽然写法比较繁琐，但是减少了jQuery类库的加载，而且执行效率更高</li>
+<li>使用国内高速镜像源。由于CRUDMAN是中文博客，主要面向国内用户访问，像FontAwesome等三方类库可以考虑使用国内镜像源，提升类库的加载速度</li>
+</ol>
+<h3 id="网络加速">网络加速</h3>
+<p>网络加速主要从两个方面去考虑优化：</p>
+<ol>
+<li>域名解析加速</li>
+<li>CDN网络加速</li>
+</ol>
+<h5 id="域名解析加速">域名解析加速</h5>
+<p>域名解析速度慢，也很影响页面打开速度，可以找域名注册商更换新的DNS服务器地址进行解析。</p>
+<p>查看域名解析速度，可以使用curl命令，如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -o /dev/null -s -w %<span style="color:#f92672">{</span>time_connect<span style="color:#f92672">}</span>:%<span style="color:#f92672">{</span>time_starttransfer<span style="color:#f92672">}</span>:%<span style="color:#f92672">{</span>time_total<span style="color:#f92672">}</span> https://www.crudman.cn
+</code></pre></div><p>其中，-o表示输出结果到/dev/null，-s表示去除状态信息，-w表示列出后面的参数的结果</p>
+<p>curl命令支持的参数有：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time_connect</td>
+<td>建立到服务器的TCP连接所用的时间</td>
+</tr>
+<tr>
+<td>time_starttransfer</td>
+<td>在发出请求之后，Web服务器返回数据的第一个字节所用的时间</td>
+</tr>
+<tr>
+<td>time_total</td>
+<td>完成请求所用的时间</td>
+</tr>
+<tr>
+<td>time_namelookup</td>
+<td>DNS解析时间，从请求开始到DNS解析完毕所用时间</td>
+</tr>
+<tr>
+<td>speed_download</td>
+<td>下载速度，单位-字节每秒</td>
+</tr>
+</tbody>
+</table>
+<h5 id="cdn网络加速">CDN网络加速</h5>
+<p>CDN是什么，相信大家都耳熟能详，它在维基百科中的定义如下：</p>
+<blockquote>
+<p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。</p>
+</blockquote>
+<p>我的域名是在腾讯云注册的，但是由于不愿意进行域名备案，所以无法在腾讯云使用CDN进行加速。在调研了Cloudflare，Vercel和Netlify等常见CDN和静态资源托管平台后，我决定使用Cloudflare给博客网站进行整站CDN加速，具体操作过程如下：</p>
+<ol>
+<li>
+<p>先注册Cloudflare账号，邮件激活并登陆</p>
+</li>
+<li>
+<p>在左侧菜单，选择“Websites”，添加博客域名</p>
+</li>
+<li>
+<p>第一步处理，由于是小站点，选择免费套餐，下一步</p>
+</li>
+<li>
+<p>第二步处理，Cloudflare会自动扫描域名对应的解析记录，这步基本不用管，下一步</p>
+</li>
+<li>
+<p>第三步处理，修改DNS信息，将原腾讯云NS改为Cloudflare提供的NS值</p>
+</li>
+<li>
+<p>设置完第三步后，先等待一段时间，然后注册邮箱会收到一封确认邮件，确认站点在Cloudflare已激活</p>
+</li>
+<li>
+<p>使用<code>dig</code>命令验证，可以看到crudman.cn已经指向了172.67.131.80和104.21.3.239这两个非GitHub Pages的IP地址</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ dig crudman.cn +nostats +nocomments +nocmd
+
+; &lt;&lt;&gt;&gt; DiG 9.9.4-RedHat-9.9.4-61.el7 &lt;&lt;&gt;&gt; crudman.cn +nostats +nocomments +nocmd
+;; global options: +cmd
+;crudman.cn.                    IN      A
+crudman.cn.             <span style="color:#ae81ff">300</span>     IN      A       172.67.131.87
+crudman.cn.             <span style="color:#ae81ff">300</span>     IN      A       104.21.3.239
+crudman.cn.             <span style="color:#ae81ff">86400</span>   IN      NS      harlee.ns.cloudflare.com.
+crudman.cn.             <span style="color:#ae81ff">86400</span>   IN      NS      frank.ns.cloudflare.com.
+frank.ns.cloudflare.com. <span style="color:#ae81ff">86353</span>  IN      AAAA    2a06:98c1:50::ac40:21a6
+frank.ns.cloudflare.com. <span style="color:#ae81ff">86353</span>  IN      AAAA    2606:4700:58::adf5:3ba6
+frank.ns.cloudflare.com. <span style="color:#ae81ff">86353</span>  IN      AAAA    2803:f800:50::6ca2:c1a6
+harlee.ns.cloudflare.com. <span style="color:#ae81ff">86353</span> IN      A       162.159.38.238
+harlee.ns.cloudflare.com. <span style="color:#ae81ff">86353</span> IN      A       172.64.34.238
+harlee.ns.cloudflare.com. <span style="color:#ae81ff">86353</span> IN      A       108.162.194.238
+harlee.ns.cloudflare.com. <span style="color:#ae81ff">86353</span> IN      AAAA    2606:4700:50::a29f:26ee
+harlee.ns.cloudflare.com. <span style="color:#ae81ff">86353</span> IN      AAAA    2803:f800:50::6ca2:c2ee
+harlee.ns.cloudflare.com. <span style="color:#ae81ff">86353</span> IN      AAAA    2a06:98c1:50::ac40:22ee
+</code></pre></div></li>
+<li>
+<p>清空谷歌浏览器缓存进行验证，地址栏输入：chrome://net-internals/#dns，选择“Clear host cache”，然后打开开发者工具，重新访问crudman.cn，查看对应的应答头信息，如果看到诸如下面这些信息，则说明CDN加速已生效</p>
+<pre><code>etag: W/&quot;648e6bfa-148f&quot;
+expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+...
+</code></pre></li>
+</ol>
+<h3 id="总结">总结</h3>
+<p>通过以上优化手段，博客网站的访问速度较之前有了很大提升，国内平均响应时长降到1秒多。除了上述介绍的优化方式外，还有很多其他的优化方式，如开启网站内容Gzip压缩，使用新的WebP图片格式等等，需要根据实际情况，选择适合的优化方式，给用户带来更好的访问体验。</p>
+<h3 id="常见工具">常见工具</h3>
+<p>测速网站：</p>
+<ol>
+<li><a href="https://www.boce.com/">https://www.boce.com/</a></li>
+<li><a href="http://ce8.com/">http://ce8.com/</a></li>
+<li><a href="https://www.17ce.com/">https://www.17ce.com/</a></li>
+</ol>
+<p>访问速度分析工具：</p>
+<ol>
+<li><a href="https://developers.google.com/speed/pagespeed/insights/">Google Pagespeed Insights</a></li>
+<li><a href="https://www.webpagetest.org/">WebPageTest</a></li>
+<li>Google Chrome，Developer tools，Lighthouse</li>
+</ol>
+<p>CDN：</p>
+<ol>
+<li>腾讯云CDN</li>
+<li>阿里云CDN</li>
+<li>又拍云CDN</li>
+<li>七牛云CDN</li>
+<li><a href="https://pages.cloudflare.com/">Cloudflare</a></li>
+<li><a href="https://www.jsdelivr.com/">jsDelivr</a></li>
+</ol>
+<p>静态资源托管平台：</p>
+<ol>
+<li><a href="https://www.netlify.com/">Netlify</a></li>
+<li><a href="https://vercel.com/">Vercel</a></li>
+</ol>
+
+        <p>&nbsp;</p>
+    </div>
+    
+    <div>
+        <span class="icon-text">
+            <span class="icon">
+                <i class="fas fa-folder-open"></i>
+            </span>
+
+            
+            <span><a href="/categories/%e5%bb%ba%e7%ab%99">建站</a></span>
+            <span>&nbsp;</span>
+            
+        </span>
+    </div>
+    
+    
+    <div>
+        <span class="icon-text ">
+            <span class="icon">
+                <i class="fas fa-tags"></i>
+            </span>
+
+            
+            <span><a href="/tags/%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2">[个人博客]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/%e7%8b%ac%e7%ab%8b%e5%8d%9a%e5%ae%a2">[独立博客]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/%e6%8a%80%e6%9c%af%e5%8d%9a%e5%ae%a2">[技术博客]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/%e7%bd%91%e9%a1%b5%e5%8a%a0%e8%bd%bd%e9%80%9f%e5%ba%a6%e4%bc%98%e5%8c%96">[网页加载速度优化]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/%e7%bd%91%e7%bb%9c%e5%8a%a0%e9%80%9f">[网络加速]</a></span>
+            <span>&nbsp;</span>
+            
+            <span><a href="/tags/cdn">[CDN]</a></span>
+            <span>&nbsp;</span>
+            
+        </span>
+    </div>
+    
+    <hr>
+</article>
+
+<nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+    
+    
+    
+    
+    <a class="pagination-previous" href="https://www.crudman.cn/posts/my-ten-years-of-the-jd/">上一篇：京东十年记</a>
+    
+    
+    
+    
+    
+    <a class="pagination-next" href="https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/">下一篇：低成本建设独立博客网站</a>
+    
+    
+</nav>
+
+
+            </div>
+        </section>
+        </div>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon"><i class="far fa-copyright"></i></span>2022 <a href="/">CRUDMAN</a> |  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY NC SA 4.0</a>
+        </p>
+        <p>
+            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme is <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>, based on <a href="https://bulma.io/">Bulma</a>
+        </p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
+        });
+
+    });
+</script></body>
+</html>

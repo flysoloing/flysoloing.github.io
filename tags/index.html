@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
 
     <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
     
     
     
@@ -27,7 +27,7 @@
             <a class="navbar-item" href="/">
                 
 
-                <img src="https://www.crudman.cn/image/logo.png" width="112" height="28">
+                <img src="https://www.crudman.cn/image/logo.png" alt width="112" height="28">
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
                 <span aria-hidden="true"></span>
@@ -75,7 +75,51 @@
         
     <div class="control">
         <div class="tags has-addons">
+            <a class="tag is-info" href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a>
+            <span class="tag">2</span>
+        </div>
+    </div>
+        
+        
+        
+        
+        
+    <div class="control">
+        <div class="tags has-addons">
+            <a class="tag is-warning" href="/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/">技术博客</a>
+            <span class="tag">2</span>
+        </div>
+    </div>
+        
+        
+        
+        
+        
+    <div class="control">
+        <div class="tags has-addons">
+            <a class="tag is-success" href="/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">独立博客</a>
+            <span class="tag">2</span>
+        </div>
+    </div>
+        
+        
+        
+        
+        
+    <div class="control">
+        <div class="tags has-addons">
             <a class="tag is-info" href="/tags/bulma/">Bulma</a>
+            <span class="tag">1</span>
+        </div>
+    </div>
+        
+        
+        
+        
+        
+    <div class="control">
+        <div class="tags has-addons">
+            <a class="tag is-info" href="/tags/cdn/">CDN</a>
             <span class="tag">1</span>
         </div>
     </div>
@@ -119,17 +163,6 @@
         
     <div class="control">
         <div class="tags has-addons">
-            <a class="tag is-info" href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a>
-            <span class="tag">1</span>
-        </div>
-    </div>
-        
-        
-        
-        
-        
-    <div class="control">
-        <div class="tags has-addons">
             <a class="tag is-success" href="/tags/%E4%BA%AC%E4%B8%9C/">京东</a>
             <span class="tag">1</span>
         </div>
@@ -152,7 +185,7 @@
         
     <div class="control">
         <div class="tags has-addons">
-            <a class="tag is-warning" href="/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/">技术博客</a>
+            <a class="tag is-info" href="/tags/%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F/">网络加速</a>
             <span class="tag">1</span>
         </div>
     </div>
@@ -163,7 +196,7 @@
         
     <div class="control">
         <div class="tags has-addons">
-            <a class="tag is-success" href="/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">独立博客</a>
+            <a class="tag is-danger" href="/tags/%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/">网页加载速度优化</a>
             <span class="tag">1</span>
         </div>
     </div>
@@ -204,14 +237,37 @@
             Powered by <a href="https://gohugo.io/">Hugo</a> | Theme is <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>, based on <a href="https://bulma.io/">Bulma</a>
         </p>
     </div>
-</footer><script>
-    $(document).ready(function() {
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
         
-        $(".navbar-burger").click(function() {
-            
-            $(".navbar-burger").toggleClass("is-active");
-            $(".navbar-menu").toggleClass("is-active");
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
         });
+
     });
 </script></body>
 </html>
