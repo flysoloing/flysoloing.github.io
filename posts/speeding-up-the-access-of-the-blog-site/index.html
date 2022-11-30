@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.crudman.cn/posts/speeding-up-the-access-of-the-blog-site/">
     <meta property="og:site_name" content="CRUDMAN">
     
-    <meta property="og:image" content="">
+    <meta property="og:image" content="https://www.crudman.cn/image/weixinlogo.png">
     <meta property="article:published_time" content="2021-05-29 17:07:34">
     <meta property="article:modified_time" content="2021-05-29 17:07:34">
     
@@ -24,12 +24,15 @@
     <title>提高博客网站的访问速度 - CRUDMAN</title>
     <link rel="canonical" href="https://www.crudman.cn/posts/speeding-up-the-access-of-the-blog-site/">
     
-
     <link rel="stylesheet" href="https://www.crudman.cn/css/qiuqiu.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/brands.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/regular.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/solid.min.css">
 
     <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
 
-    <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
+
 
     
     
@@ -83,13 +86,13 @@
         <div class="block">
             <span class="icon-text">
                 <span class="icon">
-                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                    <i class="far fa-calendar" aria-hidden="true"></i>
                 </span>
                 <span>2021-05-29</span>
             </span>
             <span class="icon-text">
                 <span class="icon">
-                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                    <i class="fas fa-pencil" aria-hidden="true"></i>
                 </span>
                 <span>约2558字</span>
             </span>
@@ -112,6 +115,7 @@
             
             
         </div>
+        
         <p>由于我的博客网站托管在GitHub上，而国内访问GitHub又是出了名的慢，经常好几秒过去页面也加载不出来。所以如何提升博客网站的访问速度，提升用户的访问体验，也是需要尽快去解决的事情。</p>
 <p>一般来说，提高网站的访问速度，主要从两个方面去做优化：</p>
 <ol>
@@ -271,7 +275,7 @@ expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cd
     <div>
         <span class="icon-text">
             <span class="icon">
-                <i class="fas fa-folder-open"></i>
+                <i class="far fa-folder-open"></i>
             </span>
 
             
@@ -328,7 +332,60 @@ expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cd
     
     
 </nav>
+<script>
+    function replaceWithFigure() {
+        const $imgs = Array.prototype.slice.call(document.querySelectorAll('p > img'), 0);
 
+        let i = 0;
+        $imgs.forEach(el => {
+            const parentEl = el.parentNode;
+            if(!parentEl.hasAttribute('id')) {
+                parentEl.setAttribute('id', 'egg'+i);
+                i++;
+            }
+        });
+
+        const $groupedImgs = $imgs.reduce((arr, item) => {
+            if(arr[item.parentNode.id]) {
+                arr[item.parentNode.id].push(item);
+            } else {
+                arr[item.parentNode.id] = [item];
+            }
+            return arr;
+        }, {});
+
+        Object.keys($groupedImgs).forEach(key => {
+            const tmpImgs = $groupedImgs[key];
+            addFigcaption(key, tmpImgs);
+        });
+    }
+
+    function addFigcaption(key, imgs) {
+        const parentEl = document.querySelector('p[id='+key+']');
+        const figureEl = document.createElement('figure');
+        figureEl.setAttribute('id', key);
+        parentEl.replaceWith(figureEl);
+        imgs.forEach(el => {
+            figureEl.appendChild(el);
+        });
+        imgs.forEach(el => {
+            if(el.alt) {
+                const figcaptionEl = document.createElement('figcaption');
+                figcaptionEl.innerHTML = el.alt;
+                figureEl.appendChild(figcaptionEl);
+            }
+        });
+        const figureStr = figureEl.innerHTML;
+        figureEl.innerHTML = figureStr.replaceAll('><', '> <');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', replaceWithFigure);
+    } else {
+        replaceWithFigure();
+    }
+
+</script>
 
             </div>
         </section>

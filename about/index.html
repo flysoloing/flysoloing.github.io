@@ -16,16 +16,21 @@
     <meta property="og:url" content="https://www.crudman.cn/about/">
     <meta property="og:site_name" content="CRUDMAN">
     
+    <meta property="og:image" content="https://www.crudman.cn/image/weixinlogo.png">
+    
 
     <title>关于 - CRUDMAN</title>
     <link rel="canonical" href="https://www.crudman.cn/about/">
     
-
     <link rel="stylesheet" href="https://www.crudman.cn/css/qiuqiu.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/brands.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/regular.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/solid.min.css">
 
     <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
 
-    <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
+
 
     
     
@@ -125,7 +130,60 @@
 <h3 id="关于写作">关于写作</h3>
 <p>写作的意义，对我来说主要有三个方面。首先是促进思考和表达。在写作的时候，不能只考虑只言片语，还需要统筹规划，反复构思和琢磨，这样才能用优美的文字将有价值的内容具化出来；其次是迭代认知。经过大量的思考后，我们会形成自己的思维模型，随着思维能力的不断提升，认知也随之迭代提升；最后是知识的传承。如有可能，希望我的文字能帮助他人少走弯路，赠人玫瑰，手留余香。</p>
 
-</div>
+</div><script>
+    function replaceWithFigure() {
+        const $imgs = Array.prototype.slice.call(document.querySelectorAll('p > img'), 0);
+
+        let i = 0;
+        $imgs.forEach(el => {
+            const parentEl = el.parentNode;
+            if(!parentEl.hasAttribute('id')) {
+                parentEl.setAttribute('id', 'egg'+i);
+                i++;
+            }
+        });
+
+        const $groupedImgs = $imgs.reduce((arr, item) => {
+            if(arr[item.parentNode.id]) {
+                arr[item.parentNode.id].push(item);
+            } else {
+                arr[item.parentNode.id] = [item];
+            }
+            return arr;
+        }, {});
+
+        Object.keys($groupedImgs).forEach(key => {
+            const tmpImgs = $groupedImgs[key];
+            addFigcaption(key, tmpImgs);
+        });
+    }
+
+    function addFigcaption(key, imgs) {
+        const parentEl = document.querySelector('p[id='+key+']');
+        const figureEl = document.createElement('figure');
+        figureEl.setAttribute('id', key);
+        parentEl.replaceWith(figureEl);
+        imgs.forEach(el => {
+            figureEl.appendChild(el);
+        });
+        imgs.forEach(el => {
+            if(el.alt) {
+                const figcaptionEl = document.createElement('figcaption');
+                figcaptionEl.innerHTML = el.alt;
+                figureEl.appendChild(figcaptionEl);
+            }
+        });
+        const figureStr = figureEl.innerHTML;
+        figureEl.innerHTML = figureStr.replaceAll('><', '> <');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', replaceWithFigure);
+    } else {
+        replaceWithFigure();
+    }
+
+</script>
 
             </div>
         </section>

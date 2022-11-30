@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/">
     <meta property="og:site_name" content="CRUDMAN">
     
-    <meta property="og:image" content="">
+    <meta property="og:image" content="https://www.crudman.cn/image/weixinlogo.png">
     <meta property="article:published_time" content="2021-04-28 17:07:34">
     <meta property="article:modified_time" content="2021-04-28 17:07:34">
     
@@ -24,12 +24,15 @@
     <title>低成本建设独立博客网站 - CRUDMAN</title>
     <link rel="canonical" href="https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/">
     
-
     <link rel="stylesheet" href="https://www.crudman.cn/css/qiuqiu.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/brands.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/regular.min.css">
+    <link rel="stylesheet" href="https://www.crudman.cn/css/solid.min.css">
 
     <link rel="shortcut icon" href="https://www.crudman.cn/image/favicon.ico">
 
-    <script src="https://kit.fontawesome.com/de403a8677.js" crossorigin="anonymous"></script>
+
 
     
     
@@ -83,13 +86,13 @@
         <div class="block">
             <span class="icon-text">
                 <span class="icon">
-                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                    <i class="far fa-calendar" aria-hidden="true"></i>
                 </span>
                 <span>2021-04-28</span>
             </span>
             <span class="icon-text">
                 <span class="icon">
-                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                    <i class="fas fa-pencil" aria-hidden="true"></i>
                 </span>
                 <span>约1898字</span>
             </span>
@@ -112,6 +115,7 @@
             
             
         </div>
+        
         <p>在互联网高速发展的今天，搭建一个属于自己的独立博客是一件非常简单的事情。对于不具备IT知识的朋友来说，可以选择阿里云或腾讯云等云厂商，它们都提供了从域名注册、自助建站到网站备案的一站式服务，对新手特别友好。如果预算有限，也有其他零成本或低成本的方案可供选择，比如著名的全球同性交友网站<a href="https://github.com/">GitHub</a>以及国内的<a href="https://gitee.com/">Gitee</a>，二者均提供Pages服务用于托管静态网页。</p>
 <p>下面将从博客搭建和日常写作两个部分进行描述，介绍如何低成本建设独立博客网站。博客搭建好只是第一步，后面持续的更新才是让博客具有生命力的重要保证。</p>
 <h3 id="博客搭建">博客搭建</h3>
@@ -156,7 +160,7 @@
     <div>
         <span class="icon-text">
             <span class="icon">
-                <i class="fas fa-folder-open"></i>
+                <i class="far fa-folder-open"></i>
             </span>
 
             
@@ -213,7 +217,60 @@
     <a class="pagination-next" disabled>下一篇：没有了</a>
     
 </nav>
+<script>
+    function replaceWithFigure() {
+        const $imgs = Array.prototype.slice.call(document.querySelectorAll('p > img'), 0);
 
+        let i = 0;
+        $imgs.forEach(el => {
+            const parentEl = el.parentNode;
+            if(!parentEl.hasAttribute('id')) {
+                parentEl.setAttribute('id', 'egg'+i);
+                i++;
+            }
+        });
+
+        const $groupedImgs = $imgs.reduce((arr, item) => {
+            if(arr[item.parentNode.id]) {
+                arr[item.parentNode.id].push(item);
+            } else {
+                arr[item.parentNode.id] = [item];
+            }
+            return arr;
+        }, {});
+
+        Object.keys($groupedImgs).forEach(key => {
+            const tmpImgs = $groupedImgs[key];
+            addFigcaption(key, tmpImgs);
+        });
+    }
+
+    function addFigcaption(key, imgs) {
+        const parentEl = document.querySelector('p[id='+key+']');
+        const figureEl = document.createElement('figure');
+        figureEl.setAttribute('id', key);
+        parentEl.replaceWith(figureEl);
+        imgs.forEach(el => {
+            figureEl.appendChild(el);
+        });
+        imgs.forEach(el => {
+            if(el.alt) {
+                const figcaptionEl = document.createElement('figcaption');
+                figcaptionEl.innerHTML = el.alt;
+                figureEl.appendChild(figcaptionEl);
+            }
+        });
+        const figureStr = figureEl.innerHTML;
+        figureEl.innerHTML = figureStr.replaceAll('><', '> <');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', replaceWithFigure);
+    } else {
+        replaceWithFigure();
+    }
+
+</script>
 
             </div>
         </section>
