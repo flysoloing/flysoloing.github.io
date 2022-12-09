@@ -138,7 +138,7 @@
 <p>完成上述步骤后，通过Git命令或Git可视化工具，把生成的静态网站内容提交到网站代码仓库，再稍等一会儿，就可以通过访问https://username.github.io来浏览网站。</p>
 <h5 id="自动化发布">自动化发布</h5>
 <p>从上面博客搭建过程过来看，影响内容发布效率的地方主要有两个：一是生成静态网站内容，二是发布网站。考虑到GitHub提供了<a href="https://docs.github.com/en/actions">GitHub Actions</a>功能，完全可以通过它来实现内容发布自动化。结合安全和效率等因素，我设想的自动化发布流程如下所示：</p>
-<p><img src="https://crudman-1255217231.cos.ap-beijing.myqcloud.com/article-publish-automation.png" alt="图1. 博客文章自动化发布流程"></p>
+<p><img src="https://crudman-1255217231.cos.ap-beijing.myqcloud.com/how-to-build-article-publish-automation-1.png" alt="图1. 博客文章自动化发布流程"></p>
 <p>为了实现这个自动化发布流程，还需要两个工具，一个是博客文章仓库，另一个是生成静态网站的Hugo Action。博客文章仓库推荐创建为私有仓库，博客内容只对自己可见。至于Hugo Action，在GitHub的Marketplace里面，可以搜到不少符合相关功能的Actions供选择使用。为了掌握GitHub Action的使用，我自己实现了一个Hugo Action，而且更符合我的实际使用场景，感兴趣的朋友可以点击<a href="https://github.com/flysoloing/hugo-action">这里</a>进行了解。</p>
 <p>另外，由于Hugo的主题市场内容实在庞杂，挑选起来眼花缭乱，而我比较倾向极简主义，又想要有更多的可控性和可玩性。思来想去，最后决定自己造一个定制化的极简主题轮子，CSS样式框架方面，选择<a href="https://bulma.io/">Bulma</a>并做了一些定制化修改，例如移动端的菜单适配优化。作为一个资深原神萌新玩家，我把该主题命名为<a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>，也就是丘丘人的意思。</p>
 <h3 id="日常写作">日常写作</h3>
