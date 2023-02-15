@@ -323,13 +323,121 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <span class="icon"><i class="far fa-copyright"></i></span>2023 <a href="/">CRUDMAN</a> |  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY NC SA 4.0</a>
+            <span class="icon"><i class="far fa-copyright"></i></span>2023 <a href="/">CRUDMAN</a> | <span class="icon"><i class="fab fa-creative-commons"></i></span><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY NC SA 4.0</a>
         </p>
         <p>
-            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme is <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a>, based on <a href="https://bulma.io/">Bulma</a>
+            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a> | This site has <span id="site_pv">a lot of</span> views
         </p>
     </div>
-</footer>
+</footer><script>
+    
+    async function count() {
+        
+        const url = window.location.href;
+        const pathname = window.location.pathname;
+        
+        
+
+        const reqData = buildReqData(url, pathname);
+        if(!reqData) {
+            return;
+        }
+        const reqDataStr = JSON.stringify(reqData);
+        
+        
+
+        const resData = await req(reqDataStr);
+        if(!resData) {
+            return null;
+        }
+        const resDataStr = JSON.stringify(resData);
+        
+        
+
+        if(resData.data && resData.data.sitePV) {
+            const code = resData.code;
+            
+            const sitePVEl = document.querySelector('#site_pv');
+            sitePVEl.innerHTML = resData.data.sitePV;
+        }
+        if(resData.data && resData.data.pages) {
+            if(resData.data.pages.length > 1) {
+                const pagePVEls = document.querySelectorAll('.page_pv');
+                for(let i = 0; i < pagePVEls.length; i++) {
+                    pagePVEls[i].innerHTML = resData.data.pages[i].pagePV;
+                }
+            }
+            if(resData.data.pages.length == 1) {
+                const pagePVEl = document.querySelector('.page_pv');
+                pagePVEl.innerHTML = resData.data.pages[0].pagePV;
+            }
+        }
+    }
+
+    
+    function buildReqData(url, pathname) {
+        let reqData = {};
+        let urls = [];
+        reqData.countType = '10';
+        reqData.urls = urls;
+        const img404 = document.querySelector('img[alt="404"]');
+        if(img404) {
+            
+            
+            return null;
+        }
+        if(pathname === '/' || pathname.includes('/page/')) {
+            const aList = Array.prototype.slice.call(document.querySelectorAll('article > div > h1 > a'), 0);
+            aList.forEach(el => {
+                urls.push(el.href);
+            });
+            return reqData;
+        }
+        if(pathname === '/posts/') {
+            return reqData;
+        }
+        if(pathname.includes('/posts/')) {
+            urls.push(url);
+            reqData.countType = '11';
+            return reqData;
+        }
+        return reqData;
+    }
+
+    
+    async function req(reqDataStr) {
+        const url = 'https://pv.crudman.cn';
+        let reqInit = {
+            method: 'PUT',
+            mode: 'cors',
+            cache: 'default',
+            referrerPolicy: 'no-referrer-when-downgrade',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+            },
+            body: reqDataStr
+        };
+        try {
+            let response = await fetch(url, reqInit);
+            
+            
+            
+            if(response.status === 200) {
+                return await response.json();
+            }
+            return null;
+        } catch (error) {
+            
+            return null;
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', count);
+    } else {
+        count();
+    }
+</script>
 
 
 
