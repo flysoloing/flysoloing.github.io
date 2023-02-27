@@ -107,19 +107,19 @@
                     <span class="icon">
                         <i class="fas fa-pencil" aria-hidden="true"></i>
                     </span>
-                    <span>约2637字</span>
+                    <span>共2637字</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-clock" aria-hidden="true"></i>
                     </span>
-                    <span>预计6分钟</span>
+                    <span>约6分钟</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </span>
-                    <span>已浏览<span class="page_pv">多</span>次</span>
+                    <span><span class="page_pv">-</span>次阅读</span>
                 </span>
 
 
@@ -163,19 +163,19 @@
                     <span class="icon">
                         <i class="fas fa-pencil" aria-hidden="true"></i>
                     </span>
-                    <span>约3766字</span>
+                    <span>共3766字</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-clock" aria-hidden="true"></i>
                     </span>
-                    <span>预计8分钟</span>
+                    <span>约8分钟</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </span>
-                    <span>已浏览<span class="page_pv">多</span>次</span>
+                    <span><span class="page_pv">-</span>次阅读</span>
                 </span>
 
 
@@ -219,19 +219,19 @@
                     <span class="icon">
                         <i class="fas fa-pencil" aria-hidden="true"></i>
                     </span>
-                    <span>约578字</span>
+                    <span>共578字</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-clock" aria-hidden="true"></i>
                     </span>
-                    <span>预计2分钟</span>
+                    <span>约2分钟</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </span>
-                    <span>已浏览<span class="page_pv">多</span>次</span>
+                    <span><span class="page_pv">-</span>次阅读</span>
                 </span>
 
 
@@ -271,19 +271,19 @@
                     <span class="icon">
                         <i class="fas fa-pencil" aria-hidden="true"></i>
                     </span>
-                    <span>约2558字</span>
+                    <span>共2558字</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-clock" aria-hidden="true"></i>
                     </span>
-                    <span>预计6分钟</span>
+                    <span>约6分钟</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </span>
-                    <span>已浏览<span class="page_pv">多</span>次</span>
+                    <span><span class="page_pv">-</span>次阅读</span>
                 </span>
 
 
@@ -323,19 +323,19 @@
                     <span class="icon">
                         <i class="fas fa-pencil" aria-hidden="true"></i>
                     </span>
-                    <span>约1898字</span>
+                    <span>共1898字</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-clock" aria-hidden="true"></i>
                     </span>
-                    <span>预计4分钟</span>
+                    <span>约4分钟</span>
                 </span>
                 <span class="icon-text">
                     <span class="icon">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </span>
-                    <span>已浏览<span class="page_pv">多</span>次</span>
+                    <span><span class="page_pv">-</span>次阅读</span>
                 </span>
 
 
@@ -368,7 +368,7 @@
             <span class="icon"><i class="far fa-copyright"></i></span>2023 <a href="/">CRUDMAN</a> | <span class="icon"><i class="fab fa-creative-commons"></i></span><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY NC SA 4.0</a>
         </p>
         <p>
-            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a> | This site has <span id="site_pv">a lot of</span> views
+            Powered by <a href="https://gohugo.io/">Hugo</a> | Theme <a href="https://github.com/flysoloing/hugo-theme-qiuqiu">QiuQiu</a> | This site has <span class="site_pv">a lot of</span> views
         </p>
     </div>
 </footer><script>
@@ -399,7 +399,7 @@
         if(resData.data && resData.data.sitePV) {
             const code = resData.code;
             
-            const sitePVEl = document.querySelector('#site_pv');
+            const sitePVEl = document.querySelector('.site_pv');
             sitePVEl.innerHTML = resData.data.sitePV;
         }
         if(resData.data && resData.data.pages) {
@@ -418,6 +418,12 @@
 
     
     function buildReqData(url, pathname) {
+        if(!url || url.length < 1 || !pathname || pathname.length < 1) {
+            return null;
+        }
+        if(url.includes('/#')) {
+            url = url.substring(0, url.indexOf('#'));
+        }
         let reqData = {};
         let urls = [];
         reqData.countType = '10';
@@ -449,6 +455,7 @@
     
     async function req(reqDataStr) {
         const url = 'https://pv.crudman.cn';
+        
         let reqInit = {
             method: 'PUT',
             mode: 'cors',

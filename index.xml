@@ -26,15 +26,6 @@
     </item>
     
     <item>
-      <title>简历</title>
-      <link>https://www.crudman.cn/resume/</link>
-      <pubDate>Wed, 27 Apr 2022 16:14:40 +0800</pubDate>
-      
-      <guid>https://www.crudman.cn/resume/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>常用软件清单</title>
       <link>https://www.crudman.cn/posts/common-software-list/</link>
       <pubDate>Sat, 05 Jun 2021 10:07:34 +0800</pubDate>
@@ -59,6 +50,15 @@
       
       <guid>https://www.crudman.cn/posts/how-to-build-an-independent-blog-site-at-low-cost/</guid>
       <description>在互联网高速发展的今天，搭建一个属于自己的独立博客是一件非常简单的事情。对于不具备IT知识的朋友来说，可以选择阿里云或腾讯云等云厂商，它们都提供了从域名注册、自助建站到网站备案的一站式服务，对新手特别友好。如果预算有限，也有其他零成本或低成本的方案可供选择，比如著名的全球同性交友网站Gi</description>
+    </item>
+    
+    <item>
+      <title>简历</title>
+      <link>https://www.crudman.cn/resume/</link>
+      <pubDate>Tue, 27 Apr 2021 16:14:40 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/resume/</guid>
+      <description></description>
     </item>
     
     <item>
