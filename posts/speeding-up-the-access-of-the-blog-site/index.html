@@ -122,6 +122,7 @@
             
         </div>
         
+        <div class="main">
         <p>由于我的博客网站托管在GitHub上，而国内访问GitHub又是出了名的慢，经常好几秒过去页面也加载不出来。所以如何提升博客网站的访问速度，提升用户的访问体验，也是需要尽快去解决的事情。</p>
 <p>一般来说，提高网站的访问速度，主要从两个方面去做优化：</p>
 <ol>
@@ -276,6 +277,7 @@ expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cd
 </ol>
 
         <p>&nbsp;</p>
+        </div>
     </div>
     
     <div>
@@ -488,8 +490,7 @@ expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cd
 
     
     async function req(reqDataStr) {
-        const url = 'https://pv.crudman.cn';
-        
+        const url = 'https://pv.crudman.cn/count';
         let reqInit = {
             method: 'PUT',
             mode: 'cors',
