@@ -133,6 +133,7 @@
             本文最后更新于 2023-01-30 20:47:09
         </p>
         
+        
         <div class="main">
         <p>2022年即将过去，这一年极不太平。国际局势波诡云谲，俄乌冲突持续，至今未见和平曙光。佩老太窜访台湾，为本就紧张的台海局势推波助澜。国内抗疫虎头蛇尾，突然放开让人措手不及。经济方面受国内国际影响更大，内外需疲软，经济表现持续低迷。</p>
 <p>作为一个普通人，这一路走来，年末还是应该好好给这一年做个总结，虽然我们都是时代车轮下毫不起眼的一粒尘埃，但这缕微光依然值得被铭记。</p>
@@ -241,7 +242,11 @@
 
 <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
     
-    <a class="pagination-previous" disabled>上一篇：没有了</a>
+    
+    
+    
+    <a class="pagination-previous" href="https://www.crudman.cn/posts/build-a-lightweight-website-traffic-statistics-tool/">上一篇：打造极简网站流量统计小工具</a>
+    
     
     
     
@@ -318,119 +323,7 @@
         </p>
     </div>
 </footer><script>
-    
-    async function count() {
-        
-        const url = window.location.href;
-        const pathname = window.location.pathname;
-        
-        
-
-        const reqData = buildReqData(url, pathname);
-        if(!reqData) {
-            return;
-        }
-        const reqDataStr = JSON.stringify(reqData);
-        
-        
-
-        const resData = await req(reqDataStr);
-        if(!resData) {
-            return null;
-        }
-        const resDataStr = JSON.stringify(resData);
-        
-        
-
-        if(resData.data && resData.data.sitePV) {
-            const code = resData.code;
-            
-            const sitePVEl = document.querySelector('.site_pv');
-            sitePVEl.innerHTML = resData.data.sitePV;
-        }
-        if(resData.data && resData.data.pages) {
-            if(resData.data.pages.length > 1) {
-                const pagePVEls = document.querySelectorAll('.page_pv');
-                for(let i = 0; i < pagePVEls.length; i++) {
-                    pagePVEls[i].innerHTML = resData.data.pages[i].pagePV;
-                }
-            }
-            if(resData.data.pages.length == 1) {
-                const pagePVEl = document.querySelector('.page_pv');
-                pagePVEl.innerHTML = resData.data.pages[0].pagePV;
-            }
-        }
-    }
-
-    
-    function buildReqData(url, pathname) {
-        if(!url || url.length < 1 || !pathname || pathname.length < 1) {
-            return null;
-        }
-        if(url.includes('/#')) {
-            url = url.substring(0, url.indexOf('#'));
-        }
-        let reqData = {};
-        let urls = [];
-        reqData.countType = '10';
-        reqData.urls = urls;
-        const img404 = document.querySelector('img[alt="404"]');
-        if(img404) {
-            
-            
-            return null;
-        }
-        if(pathname === '/' || pathname.includes('/page/')) {
-            const aList = Array.prototype.slice.call(document.querySelectorAll('article > div > h1 > a'), 0);
-            aList.forEach(el => {
-                urls.push(el.href);
-            });
-            return reqData;
-        }
-        if(pathname === '/posts/') {
-            return reqData;
-        }
-        if(pathname.includes('/posts/')) {
-            urls.push(url);
-            reqData.countType = '11';
-            return reqData;
-        }
-        return reqData;
-    }
-
-    
-    async function req(reqDataStr) {
-        const url = 'https://pv.crudman.cn/count';
-        let reqInit = {
-            method: 'PUT',
-            mode: 'cors',
-            cache: 'default',
-            referrerPolicy: 'no-referrer-when-downgrade',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8',
-            },
-            body: reqDataStr
-        };
-        try {
-            let response = await fetch(url, reqInit);
-            
-            
-            
-            if(response.status === 200) {
-                return await response.json();
-            }
-            return null;
-        } catch (error) {
-            
-            return null;
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', count);
-    } else {
-        count();
-    }
+    (()=>{"use strict";const e="https://pv.crudman.cn/count",t="article > div > h1 > a";async function n(){const n=document.querySelectorAll(".page_pv");if(!n)return;const a=function(e){let n={},a=[];switch(n.countType="10",n.urls=a,e.length){case 0:break;case 1:let e=window.location.href,r=window.location.pathname;if(!e||e.length<1||!r||r.length<1)return null;e.includes("/#")&&(e=e.substring(0,e.indexOf("#"))),n.countType="11",a.push(e);break;default:Array.prototype.slice.call(document.querySelectorAll(t),0).forEach((e=>{a.push(e.href)}))}return n}(n);if(!a)return;const r=JSON.stringify(a),c=await async function(t){let n={method:"PUT",mode:"cors",cache:"default",referrerPolicy:"no-referrer-when-downgrade",headers:{"Content-Type":"application/json;charset=utf-8"},body:t};try{let t=await fetch(e,n);return 200===t.status?await t.json():null}catch(e){return null}}(r);if(c&&(JSON.stringify(c),c.data&&c.data.sitePV&&(document.querySelector(".site_pv").innerHTML=c.data.sitePV),c.data&&c.data.pages))for(let e=0;e<n.length;e++)n[e].innerHTML=c.data.pages[e].pagePV}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()})();
 </script>
 
 

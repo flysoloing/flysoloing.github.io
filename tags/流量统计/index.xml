@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>流量统计 on CRUDMAN</title>
+    <link>https://www.crudman.cn/tags/%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1/</link>
+    <description>Recent content in 流量统计 on CRUDMAN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 02 Feb 2023 21:07:34 +0800</lastBuildDate><atom:link href="https://www.crudman.cn/tags/%E6%B5%81%E9%87%8F%E7%BB%9F%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>打造极简网站流量统计小工具</title>
+      <link>https://www.crudman.cn/posts/build-a-lightweight-website-traffic-statistics-tool/</link>
+      <pubDate>Thu, 02 Feb 2023 21:07:34 +0800</pubDate>
+      
+      <guid>https://www.crudman.cn/posts/build-a-lightweight-website-traffic-statistics-tool/</guid>
+      <description>背景 博客网站搭建完后，就可以开始博客写作了。当我们认真写完并发表一篇文章后，当然也希望知道有多少人阅读过，这就需要用到网站流量统计功能。 目前实现网站流量统计功能的平台和第三方产品，可选择范围非常多。比如Google和百度都是广泛使用的成熟平台，可以提供非常全面的数据统计功能。其他的，比如</description>
+    </item>
+    
+  </channel>
+</rss>
