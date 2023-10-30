@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.crudman.cn/categories/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/cloudflare-workers/</loc>
     <lastmod>2023-02-02T21:07:34+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/posts/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/serverless/</loc>
     <lastmod>2023-02-02T21:07:34+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/categories/%E5%BB%BA%E7%AB%99/</loc>
     <lastmod>2023-02-02T21:07:34+08:00</lastmod>
@@ -59,26 +59,32 @@
     <loc>https://www.crudman.cn/tags/%E8%81%8C%E5%9C%BA%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2022-05-21T11:03:33+08:00</lastmod>
   </url><url>
+    <loc>https://www.crudman.cn/tags/ai%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
+  </url><url>
     <loc>https://www.crudman.cn/tags/%E5%86%99%E4%BD%9C%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/posts/common-software-list/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/%E5%BC%80%E5%8F%91%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/categories/%E6%95%88%E7%8E%87/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-03-16T21:47:09+08:00</lastmod>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
+  </url><url>
+    <loc>https://www.crudman.cn/tags/%E7%BD%91%E7%BB%9C%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2023-10-29T19:29:39+08:00</lastmod>
   </url><url>
     <loc>https://www.crudman.cn/tags/cdn/</loc>
     <lastmod>2021-05-29T17:07:34+08:00</lastmod>
